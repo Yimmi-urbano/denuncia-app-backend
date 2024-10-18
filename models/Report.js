@@ -8,7 +8,7 @@ const reportSchema = new mongoose.Schema({
     lon: { type: Number, required: true }
   },
   createdAt: { type: Date, default: Date.now },
-  address: { type: String, required: true }
+  address: { type: String }
 });
 
 module.exports = mongoose.model('Report', reportSchema);
