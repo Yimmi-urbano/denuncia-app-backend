@@ -17,9 +17,9 @@ const Report = require('./models/Report');
 
 // POST: Crear una denuncia
 app.post('/api/reports', async (req, res) => {
-  const { description, coordinates,incidentType } = req.body;
+  const { description, coordinates,incidentType,address } = req.body;
   try {
-    const newReport = new Report({ description, coordinates, incidentType });
+    const newReport = new Report({ description, coordinates, incidentType, address});
     await newReport.save();
     res.status(201).json({ message: 'Report created successfully' });
   } catch (error) {
